@@ -1,7 +1,10 @@
 package com.openclassrooms.realestatemanager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -9,34 +12,29 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.navigation.NavigationView;
-import com.openclassrooms.realestatemanager.Properties.PropertiesAdapter;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
-    private RecyclerView rv;
-    private PropertiesAdapter adapter;
+    private ImageView addBtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        rv = findViewById(R.id.properties_rv);
-        rv.setLayoutManager(new LinearLayoutManager(this));
-
-        adapter = new PropertiesAdapter();
-        rv.setAdapter(adapter);
-
         this.configureToolBar();
         this.configureDrawerLayout();
         this.configureNavigationView();
+        this.addPropertie();
+
+
+
     }
 
     @Override
@@ -71,4 +69,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         this.navigationView = (NavigationView) findViewById(R.id.main_activity_navigation_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
+
+    @Override
+    public void onBackPressed() {
+        getFragmentManager().popBackStack();
+        super.onBackPressed();
+    }
+
+    private void addPropertie() {
+        addBtn = findViewById(R.id.add_propertie_btn);
+        addBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), AddPropertyActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+
+
 }

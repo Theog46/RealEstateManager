@@ -4,12 +4,23 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Theo/Documents/AndroidStudioProjects/RealEstateManager/app/src/main/res/drawable/ic_untitled_2_.xml" value="0.33" />
-        <entry key="..\:/Theo/Documents/AndroidStudioProjects/RealEstateManager/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Theo/Documents/AndroidStudioProjects/RealEstateManager/app/src/main/res/layout-sw600dp-land/activity_main.xml" value="0.1" />
+        <entry key="..\:/Theo/Documents/AndroidStudioProjects/RealEstateManager/app/src/main/res/layout-sw600dp/activity_main.xml" value="0.1" />
+        <entry key="..\:/Theo/Documents/AndroidStudioProjects/RealEstateManager/app/src/main/res/layout/activity_add_propertie.xml" value="0.18" />
+        <entry key="..\:/Theo/Documents/AndroidStudioProjects/RealEstateManager/app/src/main/res/layout/activity_login.xml" value="0.16893115942028986" />
+        <entry key="..\:/Theo/Documents/AndroidStudioProjects/RealEstateManager/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Theo/Documents/AndroidStudioProjects/RealEstateManager/app/src/main/res/layout/activity_main_items.xml" value="0.34479166666666666" />
         <entry key="..\:/Theo/Documents/AndroidStudioProjects/RealEstateManager/app/src/main/res/layout/activity_main_nav_header.xml" value="0.34479166666666666" />
         <entry key="..\:/Theo/Documents/AndroidStudioProjects/RealEstateManager/app/src/main/res/layout/activity_second.xml" value="0.33" />
         <entry key="..\:/Theo/Documents/AndroidStudioProjects/RealEstateManager/app/src/main/res/layout/activity_splash.xml" value="0.25" />
+        <entry key="..\:/Theo/Documents/AndroidStudioProjects/RealEstateManager/app/src/main/res/layout/fragment_add_propertie.xml" value="0.1408514492753623" />
+        <entry key="..\:/Theo/Documents/AndroidStudioProjects/RealEstateManager/app/src/main/res/layout/fragment_main_items.xml" value="0.23958333333333334" />
+        <entry key="..\:/Theo/Documents/AndroidStudioProjects/RealEstateManager/app/src/main/res/layout/fragment_main_view.xml" value="0.11018518518518519" />
+        <entry key="..\:/Theo/Documents/AndroidStudioProjects/RealEstateManager/app/src/main/res/layout/fragment_propertie_details.xml" value="0.146403242147923" />
+        <entry key="..\:/Theo/Documents/AndroidStudioProjects/RealEstateManager/app/src/main/res/layout/fragment_propertie_details_items.xml" value="0.23731884057971014" />
+        <entry key="..\:/Theo/Documents/AndroidStudioProjects/RealEstateManager/app/src/main/res/layout/propertie_detail_fragment.xml" value="0.33" />
         <entry key="..\:/Theo/Documents/AndroidStudioProjects/RealEstateManager/app/src/main/res/menu/activity_main_menu_drawer.xml" value="0.34479166666666666" />
+        <entry key="..\:/Theo/Documents/AndroidStudioProjects/RealEstateManager/app/src/main/res/xml/provider_paths.xml" value="0.1358695652173913" />
       </map>
     </option>
   </component>
