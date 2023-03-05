@@ -12,15 +12,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
+import com.openclassrooms.realestatemanager.Fragment.FilterFragment;
+import com.openclassrooms.realestatemanager.Fragment.GoogleMapFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
-    private ImageView addBtn;
+    private FloatingActionButton addBtn;
+    private ImageView editBtn;
+    private ImageView filterBtn;
 
 
     @Override
@@ -31,10 +37,30 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         this.configureToolBar();
         this.configureDrawerLayout();
         this.configureNavigationView();
-        this.addPropertie();
+        this.configureFilter();
 
 
 
+    }
+
+    public Bundle getBundle() {
+        Bundle bundle = getIntent().getExtras();
+        return bundle;
+    }
+
+    private void configureFilter() {
+        filterBtn = findViewById(R.id.filter_btn);
+        filterBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment fragment = new FilterFragment();
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.frame_layout, fragment)
+                        .addToBackStack("filter")
+                        .commit();
+            }
+        });
     }
 
     @Override
@@ -43,14 +69,35 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         switch (id) {
             case R.id.drawer_maps:
-                break;
+                openMap();
+                this.drawerLayout.closeDrawer(GravityCompat.START);
+                return true;
             case R.id.drawer_settings:
                 break;
+            case R.id.drawer_loan:
+                openLoan();
+                return true;
             default:
                 break;
         }
         this.drawerLayout.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void openMap() {
+        Bundle bundle = new Bundle();
+        Fragment fragment = new GoogleMapFragment();
+        fragment.setArguments(bundle);
+        this.getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.frame_layout, fragment)
+                .addToBackStack("map")
+                .commit();
+    }
+
+    private void openLoan() {
+        Intent intent = new Intent(this, LoanSimulatorActivity.class);
+        navigationView.getContext().startActivity(intent);
     }
 
     private void configureToolBar() {
@@ -74,17 +121,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void onBackPressed() {
         getFragmentManager().popBackStack();
         super.onBackPressed();
-    }
-
-    private void addPropertie() {
-        addBtn = findViewById(R.id.add_propertie_btn);
-        addBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), AddPropertyActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 
 
