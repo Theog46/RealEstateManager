@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.openclassrooms.realestatemanager.Fragment.FilterFragment">
+
+    <TextView
+        android:id="@+id/reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reset"
+        android:textSize="20dp"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/apply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Apply"
+        android:textSize="20dp"
+        android:layout_margin="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/filter_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:hint="Search for a specific type..."
+        app:errorEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/reset">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/type_filter_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/filter_min_price"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:hint="Min price"
+        app:errorEnabled="true"
+
+        app:layout_constraintEnd_toStartOf="@+id/filter_max_price"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/filter_type">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/type_min_price_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/filter_max_price"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:hint="Max price"
+        app:errorEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/filter_min_price"
+        app:layout_constraintTop_toBottomOf="@id/filter_type">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/type_max_price_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/filter_min_surface"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:hint="Min surface"
+        app:errorEnabled="true"
+
+        app:layout_constraintEnd_toStartOf="@+id/filter_max_price"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/filter_min_price">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/type_min_surface_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/filter_max_surface"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:hint="Max surface"
+        app:errorEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/filter_min_surface"
+        app:layout_constraintTop_toBottomOf="@id/filter_max_price">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/type_max_surface_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/how_much_rooms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="At least how much rooms should properties have ?"
+        app:layout_constraintBottom_toBottomOf="@+id/filter_min_surface"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/filter_min_surface" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/filter_min_rooms"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:hint="6..."
+        app:errorEnabled="true"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/how_much_rooms">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/type_min_rooms_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/how_much_baths"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="For the bathrooms ?"
+        app:layout_constraintEnd_toStartOf="@id/how_much_beds"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/filter_min_rooms" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/filter_min_bathrooms"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:hint="2"
+        app:errorEnabled="true"
+
+        app:layout_constraintEnd_toStartOf="@id/filter_min_bedrooms"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/how_much_baths">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/type_min_bathrooms_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/how_much_beds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="For the bedrooms ?"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/how_much_baths"
+        app:layout_constraintTop_toBottomOf="@id/filter_min_rooms" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/filter_min_bedrooms"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:hint="4..."
+        app:errorEnabled="true"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/how_much_baths"
+        app:layout_constraintTop_toBottomOf="@+id/how_much_beds">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/type_min_bedrooms_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroup"
+        android:layout_width="300dp"
+        style="@style/Widget.Material3.ChipGroup"
+        app:chipSpacingHorizontal="13dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/filter_min_bathrooms"
+        >
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/hospital"
+            android:text="Hospital"
+            android:checkable="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/school"
+            android:text="School"
+            android:checkable="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/supermarket"
+            android:text="Supermarket"
+            android:checkable="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/golf"
+            android:text="Golf"
+            android:checkable="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/park"
+            android:text="Park"
+            android:checkable="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/casino"
+            android:text="Casino"
+            android:checkable="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </com.google.android.material.chip.ChipGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

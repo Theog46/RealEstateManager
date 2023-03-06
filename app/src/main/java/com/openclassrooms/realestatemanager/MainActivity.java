@@ -57,7 +57,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.frame_layout, fragment)
-                        .addToBackStack("filter")
                         .commit();
             }
         });

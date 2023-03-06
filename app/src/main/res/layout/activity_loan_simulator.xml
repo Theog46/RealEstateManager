@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context="com.openclassrooms.realestatemanager.LoanSimulatorActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Montant emprunté"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/loan_borrowed"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:hint="Type">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Durée du prêt"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/loan_duration"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:hint="Type">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Taux du prêt"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/loan_rate"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:hint="Rate">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Montant de vos mensualités"/>
+
+    <Button
+        android:id="@+id/loan_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SIMULATE"/>
+
+    <TextView
+        android:id="@+id/loan_estimated"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Veuillez remplir tous les champs !"/>
+
+</LinearLayout>
