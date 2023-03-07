@@ -51,13 +51,25 @@ public class PropertieAdapter extends RecyclerView.Adapter<PropertieAdapter.Prop
             bundle.putSerializable("tag", properties.get(position));
 
             AppCompatActivity activity = (AppCompatActivity) view.getContext();
-            Fragment fragment = new PropertieDetailsFragment();
-            fragment.setArguments(bundle);
-            activity.getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.frame_layout, fragment, "detail")
-                    .addToBackStack("detail")
-                    .commit();
+
+            if (activity.getResources().getConfiguration().orientation == 2) {
+                Fragment fragment = new PropertieDetailsFragment();
+                fragment.setArguments(bundle);
+                activity.getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.frame_layout_details, fragment, "detail")
+                        .commit();
+            } else {
+                Fragment fragment = new PropertieDetailsFragment();
+                fragment.setArguments(bundle);
+                activity.getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.frame_layout, fragment, "detail")
+                        .addToBackStack("detail")
+                        .commit();
+            }
+
+
 
         });
     }

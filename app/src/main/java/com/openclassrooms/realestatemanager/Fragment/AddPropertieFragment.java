@@ -172,7 +172,7 @@ public class AddPropertieFragment extends Fragment {
         Integer propertieBedrooms = Integer.parseInt(bedrooms.getEditText().getText().toString());
 
         surface = getActivity().findViewById(R.id.add_propertie_surface);
-        String propertieSurface = surface.getEditText().getText().toString();
+        Integer propertieSurface = Integer.parseInt(surface.getEditText().getText().toString());
 
         agent = getActivity().findViewById(R.id.add_propertie_agent);
         String agentName = agent.getEditText().getText().toString();
@@ -285,6 +285,7 @@ public class AddPropertieFragment extends Fragment {
                         ImageView image;
                         image = getActivity().findViewById(R.id.add_propertie_image);
                         image.setImageURI(imageUri);
+                        image.setVisibility(View.VISIBLE);
                     } else {
 
                     }

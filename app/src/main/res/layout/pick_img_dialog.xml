@@ -8,15 +8,17 @@
         android:id="@+id/take_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Take a photo"
+        android:text="Take a picture"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/gallery_txt"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <ImageView
         android:id="@+id/add_photo_edit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
         android:src="@drawable/ic_baseline_add_a_photo_24"
+        app:layout_constraintEnd_toStartOf="@+id/add_gallery_edit"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/take_txt"
         app:tint="@color/colorPrimaryDark" />
@@ -26,13 +28,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Pick from gallery"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/take_txt"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/add_gallery_edit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
         android:src="@drawable/ic_baseline_add_photo_alternate_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/take_txt"
@@ -43,6 +46,7 @@
         android:id="@+id/photo"
         android:layout_width="256dp"
         android:layout_height="256dp"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/add_photo_edit" />

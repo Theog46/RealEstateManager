@@ -6,10 +6,8 @@
     <group android:checkableBehavior="single">
         <item android:id="@+id/drawer_maps"
               android:icon="@drawable/ic_baseline_map_24"
-              android:title="Maps" />
-        <item android:id="@+id/drawer_settings"
-            android:icon="@drawable/ic_baseline_settings_24"
-            android:title="Settings"/>
+              android:title="Maps"
+            />
         <item android:id="@+id/drawer_loan"
             android:icon="@drawable/ic_baseline_attach_money_24"
             android:title="Loan Simulator"/>

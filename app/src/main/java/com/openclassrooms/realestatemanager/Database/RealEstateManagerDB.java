@@ -53,8 +53,10 @@ public abstract class RealEstateManagerDB extends RoomDatabase {
                 propertiesContentValues.put("type", "House");
                 propertiesContentValues.put("state", "New York");
                 propertiesContentValues.put("price", 272000);
-                propertiesContentValues.put("surface", "164m²");
-                propertiesContentValues.put("rooms", 6);
+                propertiesContentValues.put("surface", 164);
+                propertiesContentValues.put("rooms", 9);
+                propertiesContentValues.put("baths", 1);
+                propertiesContentValues.put("bedrooms", 2);
                 propertiesContentValues.put("description", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.");
                 propertiesContentValues.put("address", "5 Marconi St. Brooklyn, NY 11212");
                 propertiesContentValues.put("entrydate", "14/02/2023");
@@ -63,6 +65,12 @@ public abstract class RealEstateManagerDB extends RoomDatabase {
                 propertiesContentValues.put("agentPicture", "https://solarisstudios.com/wp-content/uploads/2019/07/Solaris2123_Wilson_030PS.jpg");
                 propertiesContentValues.put("latitude", 37.426457);
                 propertiesContentValues.put("longitude", -122.074504);
+                propertiesContentValues.put("hospital", false);
+                propertiesContentValues.put("school", true);
+                propertiesContentValues.put("park", false);
+                propertiesContentValues.put("casino", true);
+                propertiesContentValues.put("supermarket", true);
+                propertiesContentValues.put("golf", true);
 
                 db.insert("Propertie", OnConflictStrategy.REPLACE, propertiesContentValues);
 
@@ -71,8 +79,10 @@ public abstract class RealEstateManagerDB extends RoomDatabase {
                 propertiesContentValues.put("type", "Villa");
                 propertiesContentValues.put("state", "Caribbean");
                 propertiesContentValues.put("price", 940000);
-                propertiesContentValues.put("surface", "640m²");
+                propertiesContentValues.put("surface", 640);
                 propertiesContentValues.put("rooms", 11);
+                propertiesContentValues.put("baths", 2);
+                propertiesContentValues.put("bedrooms", 3);
                 propertiesContentValues.put("description", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.");
                 propertiesContentValues.put("address", "610 N 13TH ST SHELTON WA 98584-2100 USA");
                 propertiesContentValues.put("entrydate", "29/10/2022");
@@ -81,6 +91,12 @@ public abstract class RealEstateManagerDB extends RoomDatabase {
                 propertiesContentValues.put("agentPicture", "https://www.caroll.com/dw/image/v2/BCMJ_PRD/on/demandware.static/-/Sites-Caroll_master/default/dw5c0eb4de/chemise-brenda-blanc-femme-vue2-35967719110681214.jpg?sw=400&sh=598");
                 propertiesContentValues.put("latitude", 37.423384);
                 propertiesContentValues.put("longitude", -122.075270);
+                propertiesContentValues.put("hospital", true);
+                propertiesContentValues.put("school", false);
+                propertiesContentValues.put("park", false);
+                propertiesContentValues.put("casino", false);
+                propertiesContentValues.put("supermarket", true);
+                propertiesContentValues.put("golf", false);
 
                 db.insert("Propertie", OnConflictStrategy.REPLACE, propertiesContentValues);
 
@@ -89,8 +105,10 @@ public abstract class RealEstateManagerDB extends RoomDatabase {
                 propertiesContentValues.put("type", "Penthouse");
                 propertiesContentValues.put("state", "Los Angeles");
                 propertiesContentValues.put("price", 614000);
-                propertiesContentValues.put("surface", "96m²");
+                propertiesContentValues.put("surface", 96);
                 propertiesContentValues.put("rooms", 7);
+                propertiesContentValues.put("baths", 1);
+                propertiesContentValues.put("bedrooms", 1);
                 propertiesContentValues.put("description", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.");
                 propertiesContentValues.put("address", "1327 CRENSHAW BLVD LOS ANGELES CA 90019-4367 USA");
                 propertiesContentValues.put("entrydate", "16/01/2023");
@@ -99,6 +117,12 @@ public abstract class RealEstateManagerDB extends RoomDatabase {
                 propertiesContentValues.put("agentPicture", "https://solarisstudios.com/wp-content/uploads/2019/07/Solaris2123_Wilson_030PS.jpg");
                 propertiesContentValues.put("latitude", 37.416130);
                 propertiesContentValues.put("longitude", -122.087395);
+                propertiesContentValues.put("hospital", false);
+                propertiesContentValues.put("school", false);
+                propertiesContentValues.put("park", true);
+                propertiesContentValues.put("casino", true);
+                propertiesContentValues.put("supermarket", false);
+                propertiesContentValues.put("golf", false);
 
                 db.insert("Propertie", OnConflictStrategy.REPLACE, propertiesContentValues);
 
@@ -107,8 +131,10 @@ public abstract class RealEstateManagerDB extends RoomDatabase {
                 propertiesContentValues.put("type", "House");
                 propertiesContentValues.put("state", "Chicago");
                 propertiesContentValues.put("price", 90666);
-                propertiesContentValues.put("surface", "126m²");
-                propertiesContentValues.put("rooms", 4);
+                propertiesContentValues.put("surface", 126);
+                propertiesContentValues.put("rooms", 9);
+                propertiesContentValues.put("baths", 2);
+                propertiesContentValues.put("bedrooms", 3);
                 propertiesContentValues.put("description", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.");
                 propertiesContentValues.put("address", "444 S FLOWER ST STE 555 CHICAGO CA 90071-2969 USA");
                 propertiesContentValues.put("entrydate", "06/06/2022");
@@ -117,6 +143,12 @@ public abstract class RealEstateManagerDB extends RoomDatabase {
                 propertiesContentValues.put("agentPicture", "https://www.caroll.com/dw/image/v2/BCMJ_PRD/on/demandware.static/-/Sites-Caroll_master/default/dw5c0eb4de/chemise-brenda-blanc-femme-vue2-35967719110681214.jpg?sw=400&sh=598");
                 propertiesContentValues.put("latitude", 37.422825);
                 propertiesContentValues.put("longitude", -122.086412);
+                propertiesContentValues.put("hospital", false);
+                propertiesContentValues.put("school", false);
+                propertiesContentValues.put("park", false);
+                propertiesContentValues.put("casino", true);
+                propertiesContentValues.put("supermarket", false);
+                propertiesContentValues.put("golf", true);
 
                 db.insert("Propertie", OnConflictStrategy.REPLACE, propertiesContentValues);
 
@@ -125,8 +157,10 @@ public abstract class RealEstateManagerDB extends RoomDatabase {
                 propertiesContentValues.put("type", "Penthouse");
                 propertiesContentValues.put("state", "San Francisco");
                 propertiesContentValues.put("price", 1340000);
-                propertiesContentValues.put("surface", "346m²");
+                propertiesContentValues.put("surface", 346);
                 propertiesContentValues.put("rooms", 12);
+                propertiesContentValues.put("baths", 2);
+                propertiesContentValues.put("bedrooms", 4);
                 propertiesContentValues.put("description", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.");
                 propertiesContentValues.put("address", "1327 CRENSHAW BLVD SAN FRANCISCO CA 90019-4367 USA");
                 propertiesContentValues.put("entrydate", "12/02/2023");
@@ -135,6 +169,12 @@ public abstract class RealEstateManagerDB extends RoomDatabase {
                 propertiesContentValues.put("agentPicture", "https://www.caroll.com/dw/image/v2/BCMJ_PRD/on/demandware.static/-/Sites-Caroll_master/default/dw5c0eb4de/chemise-brenda-blanc-femme-vue2-35967719110681214.jpg?sw=400&sh=598");
                 propertiesContentValues.put("latitude", 37.428610);
                 propertiesContentValues.put("longitude", -122.083247);
+                propertiesContentValues.put("hospital", true);
+                propertiesContentValues.put("school", true);
+                propertiesContentValues.put("park", false);
+                propertiesContentValues.put("casino", true);
+                propertiesContentValues.put("supermarket", false);
+                propertiesContentValues.put("golf", true);
 
                 db.insert("Propertie", OnConflictStrategy.REPLACE, propertiesContentValues);
 
@@ -143,8 +183,10 @@ public abstract class RealEstateManagerDB extends RoomDatabase {
                 propertiesContentValues.put("type", "Duplex");
                 propertiesContentValues.put("state", "Philadelphia");
                 propertiesContentValues.put("price", 656000);
-                propertiesContentValues.put("surface", "83m²");
+                propertiesContentValues.put("surface", 83);
                 propertiesContentValues.put("rooms", 4);
+                propertiesContentValues.put("baths", 1);
+                propertiesContentValues.put("bedrooms", 1);
                 propertiesContentValues.put("description", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.");
                 propertiesContentValues.put("address", "1327 CRENSHAW BLVD SAN PHILADELPHIA CA 90019-4367 USA");
                 propertiesContentValues.put("entrydate", "03/12/2022");
@@ -153,6 +195,12 @@ public abstract class RealEstateManagerDB extends RoomDatabase {
                 propertiesContentValues.put("agentPicture", "https://previews.123rf.com/images/deagreez/deagreez1512/deagreez151200423/50417647-portrait-de-vieux-bel-homme-d-affaires-dans-un-costume-%C3%A9l%C3%A9gant-avec-des-lunettes.jpg");
                 propertiesContentValues.put("latitude", 37.424921);
                 propertiesContentValues.put("longitude", -122.077989);
+                propertiesContentValues.put("hospital", false);
+                propertiesContentValues.put("school", false);
+                propertiesContentValues.put("park", true);
+                propertiesContentValues.put("casino", false);
+                propertiesContentValues.put("supermarket", true);
+                propertiesContentValues.put("golf", false);
 
                 db.insert("Propertie", OnConflictStrategy.REPLACE, propertiesContentValues);
 
@@ -161,8 +209,10 @@ public abstract class RealEstateManagerDB extends RoomDatabase {
                 propertiesContentValues.put("type", "House");
                 propertiesContentValues.put("state", "Washington");
                 propertiesContentValues.put("price", 875000);
-                propertiesContentValues.put("surface", "236m²");
+                propertiesContentValues.put("surface", 236);
                 propertiesContentValues.put("rooms", 15);
+                propertiesContentValues.put("baths", 3);
+                propertiesContentValues.put("bedrooms", 4);
                 propertiesContentValues.put("description", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.");
                 propertiesContentValues.put("address", "1327 CRENSHAW BLVD SAN WASHINGTON CA 90019-4367 USA");
                 propertiesContentValues.put("entrydate", "15/10/2022");
@@ -171,6 +221,12 @@ public abstract class RealEstateManagerDB extends RoomDatabase {
                 propertiesContentValues.put("agentPicture", "https://previews.123rf.com/images/deagreez/deagreez1512/deagreez151200423/50417647-portrait-de-vieux-bel-homme-d-affaires-dans-un-costume-%C3%A9l%C3%A9gant-avec-des-lunettes.jpg");
                 propertiesContentValues.put("latitude", 37.420950);
                 propertiesContentValues.put("longitude", -122.078150);
+                propertiesContentValues.put("hospital", false);
+                propertiesContentValues.put("school", false);
+                propertiesContentValues.put("park", false);
+                propertiesContentValues.put("casino", true);
+                propertiesContentValues.put("supermarket", false);
+                propertiesContentValues.put("golf", true);
 
                 db.insert("Propertie", OnConflictStrategy.REPLACE, propertiesContentValues);
 
@@ -179,8 +235,10 @@ public abstract class RealEstateManagerDB extends RoomDatabase {
                 propertiesContentValues.put("type", "Villa");
                 propertiesContentValues.put("state", "Houston");
                 propertiesContentValues.put("price", 1740000);
-                propertiesContentValues.put("surface", "654m²");
+                propertiesContentValues.put("surface", 654);
                 propertiesContentValues.put("rooms", 21);
+                propertiesContentValues.put("baths", 3);
+                propertiesContentValues.put("bedrooms", 6);
                 propertiesContentValues.put("description", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.");
                 propertiesContentValues.put("address", "1327 CRENSHAW BLVD SAN HOUSTON CA 90019-4367 USA");
                 propertiesContentValues.put("entrydate", "16/02/2023");
@@ -189,6 +247,12 @@ public abstract class RealEstateManagerDB extends RoomDatabase {
                 propertiesContentValues.put("agentPicture", "https://solarisstudios.com/wp-content/uploads/2019/07/Solaris2123_Wilson_030PS.jpg");
                 propertiesContentValues.put("latitude", 37.416430);
                 propertiesContentValues.put("longitude", -122.078243);
+                propertiesContentValues.put("hospital", true);
+                propertiesContentValues.put("school", true);
+                propertiesContentValues.put("park", false);
+                propertiesContentValues.put("casino", false);
+                propertiesContentValues.put("supermarket", false);
+                propertiesContentValues.put("golf", true);
 
                 db.insert("Propertie", OnConflictStrategy.REPLACE, propertiesContentValues);
 

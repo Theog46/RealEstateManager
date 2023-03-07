@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.location.Location;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -15,6 +14,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -27,7 +27,6 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -114,11 +113,19 @@ public class EditPropertieActivity extends AppCompatActivity implements Serializ
 
         getDialog();
 
-
-
         populatePropertieInfos();
 
-
+        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b == true) {
+                    soldDate.setVisibility(View.VISIBLE);
+                } else {
+                    soldDate.setVisibility(View.GONE);
+                    soldDateTxt.setText("null");
+                }
+            }
+        });
     }
 
     private void configureViewModel() {
@@ -135,7 +142,7 @@ public class EditPropertieActivity extends AppCompatActivity implements Serializ
             @Override
             public void onClick(View view) {
                 AlertDialog alertDialog = new AlertDialog.Builder(view.getContext()).create();
-                alertDialog.setTitle("hi");
+                alertDialog.setTitle("Choose the main image of the property");
                 View v = getLayoutInflater().inflate(R.layout.pick_img_dialog, null);
                 alertDialog.setView(v);
 
@@ -151,6 +158,7 @@ public class EditPropertieActivity extends AppCompatActivity implements Serializ
                     public void onClick(View view) {
                         Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                         startActivityForResult(i, 123);
+                        picture.setVisibility(View.VISIBLE);
                     }
                 });
 
@@ -160,6 +168,7 @@ public class EditPropertieActivity extends AppCompatActivity implements Serializ
                         Intent i = new Intent(Intent.ACTION_OPEN_DOCUMENT);
                         i.setType("image/*");
                         launchActivity.launch(i);
+                        picture.setVisibility(View.VISIBLE);
                     }
                 });
 
@@ -268,7 +277,7 @@ public class EditPropertieActivity extends AppCompatActivity implements Serializ
         roomsTxt.setText(String.valueOf(propertie.getRooms()));
         bathsTxt.setText(String.valueOf(propertie.getBaths()));
         bedsTxt.setText(String.valueOf(propertie.getBedrooms()));
-        surfaceTxt.setText(propertie.getSurface());
+        surfaceTxt.setText(String.valueOf(propertie.getSurface()));
         soldDateTxt.setText(propertie.getSoldDate());
 
         school.setChecked(propertie.getSchool());
@@ -304,7 +313,7 @@ public class EditPropertieActivity extends AppCompatActivity implements Serializ
                 Integer propertieRooms = Integer.parseInt(totalRooms.getEditText().getText().toString());
                 Integer propertieBaths = Integer.parseInt(bathrooms.getEditText().getText().toString());
                 Integer propertieBeds = Integer.parseInt(bedrooms.getEditText().getText().toString());
-                String propertieSurface = surface.getEditText().getText().toString();
+                Integer propertieSurface = Integer.parseInt(surface.getEditText().getText().toString());
                 String propertieSoldDate = soldDate.getEditText().getText().toString();
                 String propertieAgent = agent.getEditText().getText().toString();
 
