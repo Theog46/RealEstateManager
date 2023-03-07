@@ -270,4 +270,6 @@ public class FilterFragment extends Fragment {
         i.putExtras(bundle);
         startActivity(i);
     }
+
+
 }

@@ -1,6 +1,7 @@
 package com.openclassrooms.realestatemanager;
 
 import android.content.Context;
+import android.net.ConnectivityManager;
 import android.net.wifi.WifiManager;
 
 import java.text.DateFormat;
@@ -44,7 +45,18 @@ public class Utils {
      * @return
      */
     public static Boolean isInternetAvailable(Context context){
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+
         WifiManager wifi = (WifiManager)context.getSystemService(Context.WIFI_SERVICE);
-        return wifi.isWifiEnabled();
+        boolean isWifiEnabled = wifi.isWifiEnabled();
+
+        boolean isMobileDataEnabled = false;
+        try {
+            isMobileDataEnabled = cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).isConnectedOrConnecting();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return isWifiEnabled || isMobileDataEnabled;
     }
 }

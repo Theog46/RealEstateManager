@@ -79,7 +79,7 @@ public class PropertieDetailsFragment extends Fragment {
             description = v.findViewById(R.id.details_description);
             description.setText(propertie.getDescription());
             surface = v.findViewById(R.id.details_surface);
-            surface.setText(propertie.getSurface());
+            surface.setText(String.valueOf(propertie.getSurface()));
 
             rooms = v.findViewById(R.id.details_rooms);
             rooms.setText(String.valueOf(propertie.getRooms()));

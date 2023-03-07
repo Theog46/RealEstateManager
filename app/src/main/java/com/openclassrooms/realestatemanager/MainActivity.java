@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.frame_layout, fragment)
+                        .addToBackStack("filter")
                         .commit();
             }
         });
@@ -71,10 +72,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 openMap();
                 this.drawerLayout.closeDrawer(GravityCompat.START);
                 return true;
-            case R.id.drawer_settings:
-                break;
             case R.id.drawer_loan:
                 openLoan();
+                this.drawerLayout.closeDrawer(GravityCompat.START);
                 return true;
             default:
                 break;

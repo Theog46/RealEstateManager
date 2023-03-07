@@ -13,7 +13,7 @@ public class Propertie implements Serializable {
     private String mainImg;
     private String type;
     private Integer price;
-    private String surface;
+    private Integer surface;
     private Integer rooms;
     private Integer baths;
     private Integer bedrooms;
@@ -35,7 +35,7 @@ public class Propertie implements Serializable {
 
     public Propertie() {}
 
-    public Propertie(long id, String mainImg, String type, Integer price, String surface, Integer rooms, Integer baths, Integer bedrooms, String description, String address, String state, String entryDate, String soldDate, String agentName, String agentPicture, Boolean school, Boolean hospital, Boolean supermarket, Boolean golf, Boolean park, Boolean casino, Double latitude, Double longitude) {
+    public Propertie(long id, String mainImg, String type, Integer price, Integer surface, Integer rooms, Integer baths, Integer bedrooms, String description, String address, String state, String entryDate, String soldDate, String agentName, String agentPicture, Boolean school, Boolean hospital, Boolean supermarket, Boolean golf, Boolean park, Boolean casino, Double latitude, Double longitude) {
         this.id = id;
         this.mainImg = mainImg;
         this.type = type;
@@ -79,9 +79,9 @@ public class Propertie implements Serializable {
 
     public void setPrice(Integer price) { this.price = price; }
 
-    public String getSurface() { return surface; }
+    public Integer getSurface() { return surface; }
 
-    public void setSurface(String surface) { this.surface = surface; }
+    public void setSurface(Integer surface) { this.surface = surface; }
 
     public Integer getRooms() { return rooms; }
 

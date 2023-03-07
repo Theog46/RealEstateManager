@@ -11,9 +11,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-
 @RunWith(AndroidJUnit4.class)
-public class ExampleInstrumentedTest {
+public class IntegrationUtilsTest {
+
     private Context context;
 
     @Before
@@ -26,4 +26,5 @@ public class ExampleInstrumentedTest {
         boolean isAvailable = Utils.isInternetAvailable(context);
         assertTrue(isAvailable);
     }
+
 }
