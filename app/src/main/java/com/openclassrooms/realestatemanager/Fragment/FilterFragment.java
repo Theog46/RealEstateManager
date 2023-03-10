@@ -2,7 +2,6 @@ package com.openclassrooms.realestatemanager.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -70,7 +69,6 @@ public class FilterFragment extends Fragment {
 
     private void getFilteredProperties() {
         setQuery();
-        Log.d("QUERY", query);
         SimpleSQLiteQuery sqLiteQuery = new SimpleSQLiteQuery(query, args.toArray());
         List<Propertie> properties = propertieViewModel.getFilteredProperties(sqLiteQuery);
         getFilteredPropertiesForMainView(properties);
@@ -150,7 +148,7 @@ public class FilterFragment extends Fragment {
             query += propertieMaxPrice;
             args.add(propertieMaxPrice);
         }
-        if (propertieMinSurface.length() > 1) {
+        if (propertieMinSurface.length() != 0) {
             if (b) {
                 query += " AND surface >= :";
             } else {
@@ -158,7 +156,7 @@ public class FilterFragment extends Fragment {
                 b = true;
             }
             query += propertieMinSurface;
-            args.add(propertieMinPrice);
+            args.add(propertieMinSurface);
         }
         if (propertieMaxSurface.length() > 1) {
             if (b) {
@@ -264,7 +262,7 @@ public class FilterFragment extends Fragment {
     }
 
     private void openMainActivity(List<String> propertiesId) {
-        final Bundle bundle = new Bundle();
+        Bundle bundle = new Bundle();
         bundle.putStringArrayList("filter", (ArrayList<String>) propertiesId);
         Intent i = new Intent(requireActivity(), MainActivity.class);
         i.putExtras(bundle);

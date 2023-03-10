@@ -1,5 +1,6 @@
 package com.openclassrooms.realestatemanager;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -7,6 +8,7 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -20,6 +22,7 @@ public class LoanSimulatorActivity extends AppCompatActivity {
     private TextInputLayout textRateLayout;
     private TextView estimatedPrice;
     private Button btn;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -28,6 +31,7 @@ public class LoanSimulatorActivity extends AppCompatActivity {
 
         this.setupTextInputs();
         this.calculate();
+
     }
 
     private void setupTextInputs() {
@@ -42,6 +46,7 @@ public class LoanSimulatorActivity extends AppCompatActivity {
         btn = findViewById(R.id.loan_btn);
 
         btn.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View view) {
                 double borrowedValue = Double.parseDouble(textBorrowedLayout.getEditText().getText().toString());
@@ -53,7 +58,7 @@ public class LoanSimulatorActivity extends AppCompatActivity {
                 double monthlyDue = (borrowedValue * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -months));
 
                 NumberFormat nf = NumberFormat.getNumberInstance(Locale.getDefault());
-                estimatedPrice.setText(nf.format(monthlyDue));
+                estimatedPrice.setText("The monthly due is " + nf.format(monthlyDue) + " $.");
             }
         });
 

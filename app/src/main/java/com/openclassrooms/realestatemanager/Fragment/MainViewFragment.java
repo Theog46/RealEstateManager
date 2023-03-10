@@ -40,22 +40,12 @@ public class MainViewFragment extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_main_view, container, false);
 
-
-
-
         this.configureViewModel();
         this.getPropertieList();
-
-
-
-
-
 
         addBtn = v.findViewById(R.id.add_propertie_btn);
 
         this.addPropertie();
-
-
 
         return v;
     }

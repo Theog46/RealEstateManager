@@ -256,7 +256,6 @@ public class EditPropertieActivity extends AppCompatActivity implements Serializ
         bindViews();
         getAgentAdapter();
 
-
         Bundle bundle = getIntent().getExtras();
         Propertie propertie = (Propertie) bundle.getSerializable("edit");
 
@@ -291,8 +290,6 @@ public class EditPropertieActivity extends AppCompatActivity implements Serializ
 
         rv = findViewById(R.id.media_list_edit);
         rv.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-
-
 
         long id = propertie.getId();
         propertieViewModel.getAllPhotosByPropertiesId(id).observe(this, value -> {

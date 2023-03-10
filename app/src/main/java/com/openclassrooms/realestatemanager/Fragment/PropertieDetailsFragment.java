@@ -1,8 +1,8 @@
 package com.openclassrooms.realestatemanager.Fragment;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,6 +60,7 @@ public class PropertieDetailsFragment extends Fragment {
     private Chip casino;
 
 
+    @SuppressLint("SetTextI18n")
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -79,7 +80,7 @@ public class PropertieDetailsFragment extends Fragment {
             description = v.findViewById(R.id.details_description);
             description.setText(propertie.getDescription());
             surface = v.findViewById(R.id.details_surface);
-            surface.setText(String.valueOf(propertie.getSurface()));
+            surface.setText(String.valueOf(propertie.getSurface()) + " m²");
 
             rooms = v.findViewById(R.id.details_rooms);
             rooms.setText(String.valueOf(propertie.getRooms()));
@@ -159,13 +160,9 @@ public class PropertieDetailsFragment extends Fragment {
                     Intent intent = new Intent(getActivity(), EditPropertieActivity.class);
                     intent.putExtras(bundle);
                     getActivity().startActivity(intent);
-
-
                 }
             });
         }
-
-
 
         this.configureViewModel();
         this.getMediaList();
@@ -192,7 +189,6 @@ public class PropertieDetailsFragment extends Fragment {
             Propertie propertie = (Propertie) bundle.getSerializable("tag");
             propertieId = propertie.getId();
             this.propertieViewModel.getAllPhotosByPropertiesId(propertieId).observe(getViewLifecycleOwner(), this::updateMedias);
-
         }
     }
 
@@ -222,8 +218,6 @@ public class PropertieDetailsFragment extends Fragment {
                 params,
                 marker,
                 apiKey);
-
-        Log.d("URL", url);
 
         return url;
     }

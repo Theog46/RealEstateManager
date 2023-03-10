@@ -8,7 +8,6 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -123,7 +122,10 @@ public class AddPropertieFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 createPropertie();
+                Toast.makeText(getActivity(), "You successfully created a new Propertie.", Toast.LENGTH_LONG).show();
                 getActivity().onBackPressed();
+
+
             }
         });
 
@@ -279,7 +281,6 @@ public class AddPropertieFragment extends Fragment {
                 @Override
                 public void onActivityResult(ActivityResult result) {
                     if (result.getResultCode() == Activity.RESULT_OK) {
-                        Log.d("AHA", "Img picked from gallery");
                         Intent data = result.getData();
                         imageUri = data.getData();
                         ImageView image;
