@@ -43,6 +43,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
+    // THE TWO LINES THAT WERE RELATED TO BUGS.
+
+        // BEFORE : this.textViewMain = findViewById(R.id.activity_second_activity_text_view_main);
+
+        // AFTER : this.textViewMain = findViewById(R.id.activity_main_activity_text_view_main);
+
+        // BEFORE : int quantity = Utils.convertDollarToEuro(100);
+        //          this.textViewQuantity.setTextSize(20);
+        //          this.textViewQuantity.setText(quantity);
+
+        // AFTER : this.textViewQuantity.setText(String.valueOf(quantity));
+
+
     public Bundle getBundle() {
         Bundle bundle = getIntent().getExtras();
         return bundle;

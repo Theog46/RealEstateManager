@@ -333,6 +333,7 @@ public class EditPropertieActivity extends AppCompatActivity implements Serializ
                 propertie.setCasino(casino.isChecked());
 
                 if (propertieAgent.isEmpty()) {
+                    propertie.setAgentId(propertie.getAgentId());
                     propertie.setAgentName(propertie.getAgentName());
                     propertie.setAgentPicture(propertie.getAgentPicture());
                 } else {

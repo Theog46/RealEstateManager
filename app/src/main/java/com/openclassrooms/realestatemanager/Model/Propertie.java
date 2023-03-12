@@ -22,6 +22,7 @@ public class Propertie implements Serializable {
     private String state;
     private String entryDate;
     private String soldDate;
+    private long agentId;
     private String agentName;
     private String agentPicture;
     private Boolean school;
@@ -35,7 +36,7 @@ public class Propertie implements Serializable {
 
     public Propertie() {}
 
-    public Propertie(long id, String mainImg, String type, Integer price, Integer surface, Integer rooms, Integer baths, Integer bedrooms, String description, String address, String state, String entryDate, String soldDate, String agentName, String agentPicture, Boolean school, Boolean hospital, Boolean supermarket, Boolean golf, Boolean park, Boolean casino, Double latitude, Double longitude) {
+    public Propertie(long id, String mainImg, String type, Integer price, Integer surface, Integer rooms, Integer baths, Integer bedrooms, String description, String address, String state, String entryDate, String soldDate, long agentId, String agentName, String agentPicture, Boolean school, Boolean hospital, Boolean supermarket, Boolean golf, Boolean park, Boolean casino, Double latitude, Double longitude) {
         this.id = id;
         this.mainImg = mainImg;
         this.type = type;
@@ -49,6 +50,7 @@ public class Propertie implements Serializable {
         this.state = state;
         this.entryDate = entryDate;
         this.soldDate = soldDate;
+        this.agentId = agentId;
         this.agentName = agentName;
         this.agentPicture = agentPicture;
         this.school = school;
@@ -114,6 +116,10 @@ public class Propertie implements Serializable {
     public String getSoldDate() { return soldDate; }
 
     public void setSoldDate(String soldDate) { this.soldDate = soldDate; }
+
+    public long getAgentId() { return agentId; }
+
+    public void setAgentId(long agentId) { this.agentId = agentId; }
 
     public String getAgentName() { return agentName; }
 

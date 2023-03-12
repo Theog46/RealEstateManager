@@ -30,8 +30,6 @@ public class PropertieViewModel extends ViewModel {
         executor.execute(() -> propertieRepository.updatePropertie(propertie));
     }
 
-
-
     public void addPhotos(Photos photos) {
         executor.execute(() -> propertieRepository.addPhotos(photos));
     }
@@ -48,7 +46,6 @@ public class PropertieViewModel extends ViewModel {
         executor.execute(() -> propertieRepository.getFilteredProperties(query));
         return propertieRepository.getFilteredProperties(query);
     }
-
 
     public PropertieViewModel(PropertieRepository propertieRepository, Executor executor) {
         this.propertieRepository  = propertieRepository;
